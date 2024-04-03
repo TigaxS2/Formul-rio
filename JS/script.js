@@ -42,27 +42,31 @@ form.addEventListener("submit", (event) => {
         return;
     }
 
-    // Verificar se a mensagem foi escrita
-    if(messageTextarea.value === ""){
-        alert("Por favor, escreva uma mensagem.")
-    }
-
     // Verificar se a situação foi selecionada
     if(job.JobSelect.value === ""){
         alert("Por favor, selecione a sua situação!")
         return;
     }
+    
+
+    // Verificar se a mensagem foi escrita
+    if(messageTextarea.value === ""){
+        alert("Por favor, escreva uma mensagem.")
+        return;
+    }
 
     //Se todos os campos estiverem corretamente preenchidos, envie o form
     form.submit();
+
 })
 
-// Função que valida a senha
-function validatePassword(password, minDigits){
-    if(password.length >= minDigits){
-    // Senha Válida
-    return true;
+    // Função que valida a senha
+    function validatePassword(password, minDigits){
+        if(password.length >= minDigits){
+            // Senha Válida
+            return true;
+        }
+        // Senha inválida
+        return false;
     }
-    // Senha inválida
-    return false;
-}
+    
